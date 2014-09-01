@@ -1109,18 +1109,6 @@
 <rectangle x1="-0.82" y1="-3.4" x2="-0.47" y2="-2.5" layer="51"/>
 <rectangle x1="-2.08" y1="-3.4" x2="-1.73" y2="-2.5" layer="51"/>
 </package>
-<package name="6PAD_ISP">
-<wire x1="-3.556" y1="1.778" x2="3.556" y2="1.778" width="0.127" layer="51"/>
-<wire x1="-3.556" y1="1.778" x2="3.556" y2="1.778" width="0.127" layer="52"/>
-<smd name="MISO" x="-2.54" y="0" dx="1.524" dy="3.302" layer="1"/>
-<smd name="SCK" x="0" y="0" dx="1.524" dy="3.302" layer="1"/>
-<smd name="RST" x="2.54" y="0" dx="1.524" dy="3.302" layer="1"/>
-<smd name="GND" x="2.54" y="0" dx="1.524" dy="3.302" layer="16"/>
-<smd name="MOSI" x="0" y="0" dx="1.524" dy="3.302" layer="16"/>
-<smd name="VCC" x="-2.54" y="0" dx="1.524" dy="3.302" layer="16"/>
-<rectangle x1="-3.683" y1="-2.032" x2="3.683" y2="2.032" layer="30"/>
-<rectangle x1="-3.683" y1="-2.032" x2="3.683" y2="2.032" layer="29"/>
-</package>
 <package name="MA02-1">
 <description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
 <wire x1="-3.175" y1="1.27" x2="-1.905" y2="1.27" width="0.1524" layer="21"/>
@@ -1413,27 +1401,6 @@
 <pin name="(AREF)PB0" x="17.78" y="-5.08" length="middle" rot="R180"/>
 <pin name="VCC" x="-17.78" y="-2.54" length="middle" direction="pwr"/>
 <pin name="GND" x="-17.78" y="-5.08" length="middle" direction="pwr"/>
-</symbol>
-<symbol name="6PAD_ISP">
-<wire x1="-5.08" y1="7.62" x2="-5.08" y2="5.08" width="0.254" layer="94"/>
-<wire x1="-5.08" y1="5.08" x2="-5.08" y2="-7.62" width="0.254" layer="94"/>
-<wire x1="-5.08" y1="-7.62" x2="5.08" y2="-7.62" width="0.254" layer="94"/>
-<wire x1="5.08" y1="-7.62" x2="5.08" y2="7.62" width="0.254" layer="94"/>
-<wire x1="5.08" y1="7.62" x2="-2.54" y2="7.62" width="0.254" layer="94"/>
-<wire x1="-2.54" y1="7.62" x2="-5.08" y2="7.62" width="0.254" layer="94"/>
-<wire x1="0" y1="5.08" x2="0" y2="-5.08" width="0.254" layer="94"/>
-<wire x1="-5.08" y1="5.08" x2="-2.54" y2="7.62" width="0.254" layer="94"/>
-<pin name="P$1" x="-10.16" y="5.08" visible="pad" length="middle"/>
-<pin name="P$2" x="-10.16" y="0" visible="pad" length="middle"/>
-<pin name="P$3" x="-10.16" y="-5.08" visible="pad" length="middle"/>
-<pin name="P$4" x="10.16" y="-5.08" visible="pad" length="middle" rot="R180"/>
-<pin name="P$5" x="10.16" y="0" visible="pad" length="middle" rot="R180"/>
-<pin name="P$6" x="10.16" y="5.08" visible="pad" length="middle" rot="R180"/>
-<polygon width="0.254" layer="94">
-<vertex x="-5.08" y="5.08"/>
-<vertex x="-2.54" y="7.62"/>
-<vertex x="-5.08" y="7.62"/>
-</polygon>
 </symbol>
 <symbol name="MA02-1">
 <wire x1="-3.81" y1="7.62" x2="4.064" y2="7.62" width="0.254" layer="94"/>
@@ -1800,31 +1767,6 @@ http://www.fairchildsemi.com/ds/LM/LM7805.pdf</description>
 <connect gate="G$1" pin="(OCP)PB1" pad="6"/>
 <connect gate="G$1" pin="GND" pad="4"/>
 <connect gate="G$1" pin="VCC" pad="8"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-<deviceset name="AVR-ISP-6-EDGE">
-<description>&lt;b&gt;6 pin edge connector for ISP with ATMEL MCUs.&lt;/b&gt;&lt;br&gt;
-Developed by Craig Moates (craig at moates dot net).&lt;br&gt;
-Library by David Blundell (blundar at gmail dot com).&lt;br&gt;
-&lt;br&gt;
-Often, even a 6 pin header is really inconvenient for board layout and/or production.  This SMD-only header is our de-facto standard for using an edge connector for programming with the help of a 6pin/10pin to edge card adapter.</description>
-<gates>
-<gate name="G$1" symbol="6PAD_ISP" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="6PAD_ISP">
-<connects>
-<connect gate="G$1" pin="P$1" pad="MISO"/>
-<connect gate="G$1" pin="P$2" pad="SCK"/>
-<connect gate="G$1" pin="P$3" pad="RST"/>
-<connect gate="G$1" pin="P$4" pad="GND"/>
-<connect gate="G$1" pin="P$5" pad="MOSI"/>
-<connect gate="G$1" pin="P$6" pad="VCC"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -8971,6 +8913,153 @@ DIN A3, landscape with location and doc. field</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="avr-7">
+<description>&lt;b&gt;AVR Devices&lt;/b&gt;&lt;p&gt;
+Version 7 - August 1, 2011.&lt;br&gt;&lt;br&gt;
+Added ATmega164P/324P/644P devices for DIP and TQFP.
+&lt;p&gt;
+Version 4 - March 11, 2008.&lt;br&gt;&lt;br&gt;
+This library now includes ONLY ATMEL AVR microcontrollers.  It is the result of merging all other available device libraries available at http://www.cadsoft.de/download as of the time it was made.  In addition to the legacy AT90* devices, it includes most ATMEGA devices including the new 48/88/168, most ATTiny devices and a set of ISP and JTAG pin headers.&lt;p&gt;
+Based on the following sources:&lt;p&gt;
+&lt;ul&gt;
+&lt;li&gt;www.atmel.com
+&lt;li&gt; file at90smcu_v400.zip
+&lt;li&gt;avr.lbr and atmel.lbr as provided by CadSoft
+&lt;li&gt;avr-1.lbr by David Blundell
+&lt;li&gt;avr-2.lbr by Boris Zalokar
+&lt;li&gt;avr-3.lbr by Carson Reynolds
+&lt;li&gt;attiny24_44_84.lbr by Pawel Szramowski (ATTiny24/44/84 devices)
+&lt;li&gt;atmel.lbr by Bob Starr (ISP headers)
+&lt;li&gt;moates_custom_parts.lbr (edge ISP)
+&lt;li&gt;other misc sources
+&lt;/ul&gt;
+&lt;author&gt;Revised by David Blundell (blundar at gmail dot com) and others.&lt;/author&gt;
+&lt;p&gt;
+&lt;author&gt;Added Mega162, Tiny2313 John Lussmyer (cougar at casadelgato.com)&lt;/author&gt;
+&lt;p&gt;
+&lt;author&gt;Added XMega A1,A3,A4,D3,D4 John Lussmyer Aug 1, 2011(cougar at casadelgato.com)&lt;/author&gt;</description>
+<packages>
+<package name="AVR-ISP-6">
+<description>&lt;b&gt;PIN HEADER&lt;/b&gt;&lt;p&gt; JTAG 6 Pin, 0.1" Straight</description>
+<wire x1="-3.81" y1="2.54" x2="3.81" y2="2.54" width="0.254" layer="21"/>
+<wire x1="3.81" y1="2.54" x2="3.81" y2="-2.54" width="0.254" layer="21"/>
+<wire x1="3.81" y1="-2.54" x2="-3.81" y2="-2.54" width="0.254" layer="21"/>
+<wire x1="-3.81" y1="-2.54" x2="-3.81" y2="2.54" width="0.254" layer="21"/>
+<pad name="1" x="-2.54" y="-1.27" drill="1.016" shape="square"/>
+<pad name="2" x="-2.54" y="1.27" drill="1.016" shape="octagon"/>
+<pad name="3" x="0" y="-1.27" drill="1.016" shape="octagon"/>
+<pad name="4" x="0" y="1.27" drill="1.016" shape="octagon"/>
+<pad name="5" x="2.54" y="-1.27" drill="1.016" shape="octagon"/>
+<pad name="6" x="2.54" y="1.27" drill="1.016" shape="octagon"/>
+<text x="-3.81" y="-4.445" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="-3.81" y="3.175" size="1.27" layer="27" ratio="12">&gt;VALUE</text>
+<rectangle x1="-2.794" y1="-1.524" x2="-2.286" y2="-1.016" layer="51"/>
+<rectangle x1="-2.794" y1="1.016" x2="-2.286" y2="1.524" layer="51"/>
+<rectangle x1="-0.254" y1="1.016" x2="0.254" y2="1.524" layer="51"/>
+<rectangle x1="-0.254" y1="-1.524" x2="0.254" y2="-1.016" layer="51"/>
+<rectangle x1="2.286" y1="1.016" x2="2.794" y2="1.524" layer="51"/>
+<rectangle x1="2.286" y1="-1.524" x2="2.794" y2="-1.016" layer="51"/>
+</package>
+<package name="AVR-ISP-6R">
+<description>&lt;b&gt;PIN HEADER&lt;/b&gt;&lt;p&gt; AVR ISP 6 Pin, 0.1" Right Angle</description>
+<wire x1="3.81" y1="-3.175" x2="1.27" y2="-3.175" width="0.254" layer="21"/>
+<wire x1="1.27" y1="-5.715" x2="3.81" y2="-5.715" width="0.254" layer="21"/>
+<wire x1="3.81" y1="-5.715" x2="3.81" y2="-3.175" width="0.254" layer="21"/>
+<wire x1="2.54" y1="-10.795" x2="2.54" y2="-6.35" width="0.762" layer="51"/>
+<wire x1="1.27" y1="-3.175" x2="-1.27" y2="-3.175" width="0.254" layer="21"/>
+<wire x1="-1.27" y1="-5.715" x2="1.27" y2="-5.715" width="0.254" layer="21"/>
+<wire x1="0" y1="-10.795" x2="0" y2="-6.35" width="0.762" layer="51"/>
+<wire x1="-1.27" y1="-3.175" x2="-3.81" y2="-3.175" width="0.254" layer="21"/>
+<wire x1="-3.81" y1="-3.175" x2="-3.81" y2="-5.715" width="0.254" layer="21"/>
+<wire x1="-3.81" y1="-5.715" x2="-1.27" y2="-5.715" width="0.254" layer="21"/>
+<wire x1="-2.54" y1="-10.795" x2="-2.54" y2="-6.35" width="0.762" layer="51"/>
+<pad name="2" x="-2.54" y="1.27" drill="1.016" shape="octagon"/>
+<pad name="4" x="0" y="1.27" drill="1.016" shape="octagon"/>
+<pad name="6" x="2.54" y="1.27" drill="1.016" shape="octagon"/>
+<pad name="1" x="-2.54" y="-1.27" drill="1.016" shape="square"/>
+<pad name="3" x="0" y="-1.27" drill="1.016" shape="octagon"/>
+<pad name="5" x="2.54" y="-1.27" drill="1.016" shape="octagon"/>
+<text x="4.445" y="-1.27" size="1.27" layer="25" ratio="12" rot="R270">&gt;NAME</text>
+<text x="-5.715" y="-1.27" size="1.27" layer="27" ratio="12" rot="R270">&gt;VALUE</text>
+<rectangle x1="2.159" y1="-6.223" x2="2.921" y2="-5.715" layer="51" rot="R180"/>
+<rectangle x1="-0.381" y1="-6.223" x2="0.381" y2="-5.715" layer="51" rot="R180"/>
+<rectangle x1="-2.921" y1="-6.223" x2="-2.159" y2="-5.715" layer="51" rot="R180"/>
+<rectangle x1="2.159" y1="-3.175" x2="2.921" y2="-2.159" layer="21" rot="R180"/>
+<rectangle x1="-0.381" y1="-3.175" x2="0.381" y2="-2.159" layer="21" rot="R180"/>
+<rectangle x1="2.159" y1="-0.381" x2="2.921" y2="0.381" layer="21" rot="R180"/>
+<rectangle x1="2.159" y1="-2.159" x2="2.921" y2="-0.381" layer="51" rot="R180"/>
+<rectangle x1="-0.381" y1="-2.159" x2="0.381" y2="-0.381" layer="51" rot="R180"/>
+<rectangle x1="-0.381" y1="-0.381" x2="0.381" y2="0.381" layer="21" rot="R180"/>
+<rectangle x1="-2.921" y1="-3.175" x2="-2.159" y2="-2.159" layer="21" rot="R180"/>
+<rectangle x1="-2.921" y1="-0.381" x2="-2.159" y2="0.381" layer="21" rot="R180"/>
+<rectangle x1="-2.921" y1="-2.159" x2="-2.159" y2="-0.381" layer="51" rot="R180"/>
+</package>
+</packages>
+<symbols>
+<symbol name="AVR-ISP-6">
+<wire x1="-6.35" y1="-5.08" x2="6.35" y2="-5.08" width="0.4064" layer="94"/>
+<wire x1="6.35" y1="-5.08" x2="6.35" y2="5.08" width="0.4064" layer="94"/>
+<wire x1="6.35" y1="5.08" x2="-6.35" y2="5.08" width="0.4064" layer="94"/>
+<wire x1="-6.35" y1="5.08" x2="-6.35" y2="-5.08" width="0.4064" layer="94"/>
+<wire x1="-1.905" y1="2.54" x2="-1.27" y2="2.54" width="1.016" layer="94"/>
+<wire x1="-1.905" y1="0" x2="-1.27" y2="0" width="1.016" layer="94"/>
+<wire x1="-1.905" y1="-2.54" x2="-1.27" y2="-2.54" width="1.016" layer="94"/>
+<wire x1="1.27" y1="2.54" x2="1.905" y2="2.54" width="1.016" layer="94"/>
+<wire x1="1.27" y1="0" x2="1.905" y2="0" width="1.016" layer="94"/>
+<wire x1="1.27" y1="-2.54" x2="1.905" y2="-2.54" width="1.016" layer="94"/>
+<text x="-6.35" y="6.35" size="1.778" layer="95" ratio="10">&gt;NAME</text>
+<text x="-6.35" y="-8.255" size="1.778" layer="94" ratio="10">AVR ISP</text>
+<text x="7.62" y="0.635" size="1.143" layer="94" ratio="10">MOSI</text>
+<text x="-11.176" y="0.635" size="1.143" layer="94" ratio="10">SCK</text>
+<text x="-11.176" y="3.175" size="1.143" layer="94" ratio="10">MISO</text>
+<text x="7.62" y="3.175" size="1.143" layer="94" ratio="10">VCC</text>
+<text x="-11.176" y="-1.905" size="1.143" layer="94" ratio="10">RST</text>
+<text x="7.62" y="-1.905" size="1.143" layer="94" ratio="10">GND</text>
+<pin name="3" x="-5.08" y="0" visible="pad" length="short" direction="pas"/>
+<pin name="2" x="5.08" y="2.54" visible="pad" length="short" direction="pas" rot="R180"/>
+<pin name="5" x="-5.08" y="-2.54" visible="pad" length="short" direction="pas"/>
+<pin name="1" x="-5.08" y="2.54" visible="pad" length="short" direction="pas"/>
+<pin name="6" x="5.08" y="-2.54" visible="pad" length="short" direction="pas" rot="R180"/>
+<pin name="4" x="5.08" y="0" visible="pad" length="short" direction="pas" rot="R180"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="AVR-ISP-6" prefix="JP">
+<description>&lt;b&gt;AVR ISP-6&lt;/b&gt;&lt;p&gt; Serial Programming Header</description>
+<gates>
+<gate name="G$1" symbol="AVR-ISP-6" x="0" y="0"/>
+</gates>
+<devices>
+<device name="VERT" package="AVR-ISP-6">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+<connect gate="G$1" pin="3" pad="3"/>
+<connect gate="G$1" pin="4" pad="4"/>
+<connect gate="G$1" pin="5" pad="5"/>
+<connect gate="G$1" pin="6" pad="6"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="HORZ" package="AVR-ISP-6R">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+<connect gate="G$1" pin="3" pad="3"/>
+<connect gate="G$1" pin="4" pad="4"/>
+<connect gate="G$1" pin="5" pad="5"/>
+<connect gate="G$1" pin="6" pad="6"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -9110,8 +9199,6 @@ DIN A3, landscape with location and doc. field</description>
 <part name="P+14" library="supply1" deviceset="+5V" device=""/>
 <part name="SUPPLY22" library="supply2" deviceset="GND" device=""/>
 <part name="P+13" library="supply1" deviceset="+5V" device=""/>
-<part name="P+15" library="supply1" deviceset="+5V" device=""/>
-<part name="SUPPLY23" library="supply2" deviceset="GND" device=""/>
 <part name="SUPPLY24" library="supply2" deviceset="GND" device=""/>
 <part name="SUPPLY25" library="supply2" deviceset="GND" device=""/>
 <part name="SUPPLY26" library="supply2" deviceset="GND" device=""/>
@@ -9121,11 +9208,6 @@ DIN A3, landscape with location and doc. field</description>
 <part name="SV7" library="my_lib" deviceset="MA10-1" device="" value="Digital"/>
 <part name="SUPPLY28" library="supply2" deviceset="GND" device=""/>
 <part name="SUPPLY29" library="supply2" deviceset="GND" device=""/>
-<part name="U$4" library="my_lib" deviceset="AVR-ISP-6-EDGE" device="">
-<attribute name="MF" value=""/>
-<attribute name="MPN" value=""/>
-<attribute name="OC_FARNELL" value="unknown"/>
-</part>
 <part name="LED1" library="led" deviceset="LED" device="SML1206" value="Red">
 <attribute name="MF" value="KINGBRIGHT"/>
 <attribute name="MPN" value="KPT-3216SRC-J4"/>
@@ -9159,20 +9241,10 @@ DIN A3, landscape with location and doc. field</description>
 <part name="SUPPLY30" library="supply2" deviceset="GND" device=""/>
 <part name="SUPPLY31" library="supply2" deviceset="GND" device=""/>
 <part name="SUPPLY32" library="supply2" deviceset="GND" device=""/>
-<part name="R12" library="resistor" deviceset="R-US_" device="R0805" value="150">
-<attribute name="MF" value="VISHAY DRALORIC"/>
-<attribute name="MPN" value="CRCW0805150RFKEAHP"/>
-<attribute name="OC_FARNELL" value="1738948RL"/>
-</part>
 <part name="R13" library="resistor" deviceset="R-US_" device="R0805" value="150">
 <attribute name="MF" value="VISHAY DRALORIC"/>
 <attribute name="MPN" value="CRCW0805150RFKEAHP"/>
 <attribute name="OC_FARNELL" value="1738948RL"/>
-</part>
-<part name="LED4" library="led" deviceset="LED" device="SML1206" value="Red">
-<attribute name="MF" value="KINGBRIGHT"/>
-<attribute name="MPN" value="KPT-3216SRC-J4"/>
-<attribute name="OC_FARNELL" value="2314403"/>
 </part>
 <part name="LED5" library="led" deviceset="LED" device="SML1206" value="Green">
 <attribute name="MF" value="KINGBRIGHT"/>
@@ -9270,7 +9342,6 @@ DIN A3, landscape with location and doc. field</description>
 <attribute name="OC_FARNELL" value="1738948RL"/>
 </part>
 <part name="SUPPLY41" library="supply2" deviceset="GND" device=""/>
-<part name="SUPPLY42" library="supply2" deviceset="GND" device=""/>
 <part name="SUPPLY43" library="supply2" deviceset="GND" device=""/>
 <part name="SUPPLY45" library="supply2" deviceset="GND" device=""/>
 <part name="R23" library="resistor" deviceset="R-US_" device="R0805" value="10k">
@@ -9310,6 +9381,26 @@ DIN A3, landscape with location and doc. field</description>
 <part name="SUPPLY2" library="supply2" deviceset="GND" device=""/>
 <part name="SUPPLY5" library="supply2" deviceset="GND" device=""/>
 <part name="SUPPLY6" library="supply2" deviceset="VCC" device=""/>
+<part name="R2" library="resistor" deviceset="R-US_" device="R0805" value="150">
+<attribute name="MF" value="VISHAY DRALORIC"/>
+<attribute name="MPN" value="CRCW0805150RFKEAHP"/>
+<attribute name="OC_FARNELL" value="1738948RL"/>
+</part>
+<part name="LED4" library="led" deviceset="LED" device="SML1206" value="Red">
+<attribute name="MF" value="KINGBRIGHT"/>
+<attribute name="MPN" value="KPT-3216SGC"/>
+<attribute name="OC_FARNELL" value="2099247RL"/>
+</part>
+<part name="SUPPLY27" library="supply2" deviceset="GND" device=""/>
+<part name="R3" library="resistor" deviceset="R-US_" device="R0805" value="10k">
+<attribute name="MF" value="VISHAY DRALORIC"/>
+<attribute name="MPN" value="CRCW0805150RFKEAHP"/>
+<attribute name="OC_FARNELL" value="1738948RL"/>
+</part>
+<part name="P+4" library="supply1" deviceset="+5V" device=""/>
+<part name="JP1" library="avr-7" deviceset="AVR-ISP-6" device="VERT"/>
+<part name="P+15" library="supply1" deviceset="+5V" device=""/>
+<part name="SUPPLY23" library="supply2" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -9839,37 +9930,19 @@ DIN A3, landscape with location and doc. field</description>
 <instance part="P+14" gate="1" x="-117.82" y="118.9" rot="R180"/>
 <instance part="SUPPLY22" gate="GND" x="-120.36" y="240.82" rot="R270"/>
 <instance part="P+13" gate="1" x="-120.36" y="243.36" rot="R90"/>
-<instance part="P+15" gate="1" x="-69.56" y="200.18" rot="R90"/>
-<instance part="SUPPLY23" gate="GND" x="-46.7" y="200.18" rot="R90"/>
 <instance part="SUPPLY24" gate="GND" x="-110.2" y="149.38" rot="R180"/>
 <instance part="SUPPLY25" gate="GND" x="-102.58" y="151.92" rot="R180"/>
 <instance part="SUPPLY26" gate="GND" x="-102.58" y="101.12" rot="R270"/>
-<instance part="U$4" gate="G$1" x="-56.86" y="184.94" rot="R90">
-<attribute name="OC_FARNELL" x="-56.86" y="184.94" size="2.1844" layer="96" display="off"/>
-<attribute name="MF" x="-56.86" y="184.94" size="2.1844" layer="96" display="off"/>
-<attribute name="MPN" x="-56.86" y="184.94" size="2.1844" layer="96" display="off"/>
-</instance>
-<instance part="R12" gate="G$1" x="-51.78" y="258.6" rot="R270">
-<attribute name="OC_FARNELL" x="-51.78" y="258.6" size="2.1844" layer="96" display="off"/>
-<attribute name="MF" x="-51.78" y="258.6" size="2.1844" layer="96" display="off"/>
-<attribute name="MPN" x="-51.78" y="258.6" size="2.1844" layer="96" display="off"/>
-</instance>
 <instance part="R13" gate="G$1" x="-51.78" y="240.82" rot="R90">
 <attribute name="OC_FARNELL" x="-51.78" y="240.82" size="2.1844" layer="96" display="off"/>
 <attribute name="MF" x="-51.78" y="240.82" size="2.1844" layer="96" display="off"/>
 <attribute name="MPN" x="-51.78" y="240.82" size="2.1844" layer="96" display="off"/>
-</instance>
-<instance part="LED4" gate="G$1" x="-51.78" y="266.22" rot="R180">
-<attribute name="OC_FARNELL" x="-51.78" y="266.22" size="2.1844" layer="96" display="off"/>
-<attribute name="MF" x="-51.78" y="266.22" size="2.1844" layer="96" display="off"/>
-<attribute name="MPN" x="-51.78" y="266.22" size="2.1844" layer="96" display="off"/>
 </instance>
 <instance part="LED5" gate="G$1" x="-51.78" y="233.2">
 <attribute name="OC_FARNELL" x="-51.78" y="233.2" size="2.1844" layer="96" display="off"/>
 <attribute name="MF" x="-51.78" y="233.2" size="2.1844" layer="96" display="off"/>
 <attribute name="MPN" x="-51.78" y="233.2" size="2.1844" layer="96" display="off"/>
 </instance>
-<instance part="SUPPLY42" gate="GND" x="-51.78" y="273.84" rot="R180"/>
 <instance part="SUPPLY43" gate="GND" x="-51.78" y="225.58"/>
 <instance part="SUPPLY45" gate="GND" x="-97.5" y="96.04" rot="R270"/>
 <instance part="R23" gate="G$1" x="-94.96" y="111.28" rot="R90">
@@ -9908,6 +9981,26 @@ DIN A3, landscape with location and doc. field</description>
 <instance part="SUPPLY2" gate="GND" x="-61.722" y="124.206"/>
 <instance part="SUPPLY5" gate="GND" x="-370.078" y="102.87"/>
 <instance part="SUPPLY6" gate="G$1" x="-370.332" y="113.03"/>
+<instance part="R2" gate="G$1" x="-64.48" y="238.28" rot="R90">
+<attribute name="OC_FARNELL" x="-64.48" y="238.28" size="2.1844" layer="96" display="off"/>
+<attribute name="MF" x="-64.48" y="238.28" size="2.1844" layer="96" display="off"/>
+<attribute name="MPN" x="-64.48" y="238.28" size="2.1844" layer="96" display="off"/>
+</instance>
+<instance part="LED4" gate="G$1" x="-64.48" y="230.66">
+<attribute name="OC_FARNELL" x="-64.48" y="230.66" size="2.1844" layer="96" display="off"/>
+<attribute name="MF" x="-64.48" y="230.66" size="2.1844" layer="96" display="off"/>
+<attribute name="MPN" x="-64.48" y="230.66" size="2.1844" layer="96" display="off"/>
+</instance>
+<instance part="SUPPLY27" gate="GND" x="-64.48" y="223.04"/>
+<instance part="R3" gate="G$1" x="-56.86" y="258.6" rot="R90">
+<attribute name="OC_FARNELL" x="-56.86" y="258.6" size="2.1844" layer="96" display="off"/>
+<attribute name="MF" x="-56.86" y="258.6" size="2.1844" layer="96" display="off"/>
+<attribute name="MPN" x="-56.86" y="258.6" size="2.1844" layer="96" display="off"/>
+</instance>
+<instance part="P+4" gate="1" x="-56.86" y="266.22"/>
+<instance part="JP1" gate="G$1" x="-55.88" y="185.42" rot="R90"/>
+<instance part="P+15" gate="1" x="-63.5" y="198.12" rot="R90"/>
+<instance part="SUPPLY23" gate="GND" x="-48.26" y="198.12" rot="R90"/>
 </instances>
 <busses>
 </busses>
@@ -10066,14 +10159,6 @@ DIN A3, landscape with location and doc. field</description>
 </net>
 <net name="TX4" class="0">
 <segment>
-<pinref part="PCB2" gate="G$1" pin="2"/>
-<wire x1="-163.54" y1="146.84" x2="-163.54" y2="164.62" width="0.1524" layer="91"/>
-<label x="-163.54" y="164.62" size="1.27" layer="95" rot="R90" xref="yes"/>
-<pinref part="SV6" gate="1" pin="6"/>
-<junction x="-163.54" y="146.84"/>
-<wire x1="-163.54" y1="146.84" x2="-163.54" y2="141.76" width="0.1524" layer="91"/>
-</segment>
-<segment>
 <label x="-336.26" y="235.74" size="1.778" layer="95" xref="yes"/>
 <wire x1="-343.88" y1="235.74" x2="-336.26" y2="235.74" width="0.1524" layer="91"/>
 <pinref part="R19" gate="G$1" pin="1"/>
@@ -10082,6 +10167,14 @@ DIN A3, landscape with location and doc. field</description>
 <wire x1="-376.9" y1="243.36" x2="-376.9" y2="235.74" width="0.1524" layer="91"/>
 <wire x1="-376.9" y1="235.74" x2="-343.88" y2="235.74" width="0.1524" layer="91"/>
 <junction x="-343.88" y="235.74"/>
+</segment>
+<segment>
+<pinref part="PCB2" gate="G$1" pin="A3"/>
+<wire x1="-163.54" y1="90.96" x2="-163.54" y2="78.26" width="0.1524" layer="91"/>
+<label x="-163.54" y="78.26" size="1.27" layer="95" rot="R270" xref="yes"/>
+<pinref part="SV4" gate="1" pin="3"/>
+<junction x="-163.54" y="90.96"/>
+<wire x1="-163.54" y1="90.96" x2="-163.54" y2="98.58" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="TX1" class="0">
@@ -10110,16 +10203,6 @@ DIN A3, landscape with location and doc. field</description>
 <pinref part="SV4" gate="1" pin="4"/>
 <junction x="-166.08" y="90.96"/>
 <wire x1="-166.08" y1="90.96" x2="-166.08" y2="98.58" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="EN2" class="0">
-<segment>
-<pinref part="PCB2" gate="G$1" pin="A3"/>
-<wire x1="-163.54" y1="90.96" x2="-163.54" y2="78.26" width="0.1524" layer="91"/>
-<label x="-163.54" y="78.26" size="1.27" layer="95" rot="R270" xref="yes"/>
-<pinref part="SV4" gate="1" pin="3"/>
-<junction x="-163.54" y="90.96"/>
-<wire x1="-163.54" y1="90.96" x2="-163.54" y2="98.58" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="EN3" class="0">
@@ -10251,12 +10334,6 @@ DIN A3, landscape with location and doc. field</description>
 <wire x1="-115.28" y1="243.36" x2="-117.82" y2="243.36" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="U$4" gate="G$1" pin="P$6"/>
-<pinref part="P+15" gate="1" pin="+5V"/>
-<wire x1="-61.94" y1="195.1" x2="-61.94" y2="200.18" width="0.1524" layer="91"/>
-<wire x1="-61.94" y1="200.18" x2="-67.02" y2="200.18" width="0.1524" layer="91"/>
-</segment>
-<segment>
 <pinref part="RCIN1" gate="G$1" pin="2"/>
 <pinref part="P+18" gate="1" pin="+5V"/>
 <wire x1="-100.04" y1="200.18" x2="-89.88" y2="200.18" width="0.1524" layer="91"/>
@@ -10306,6 +10383,16 @@ DIN A3, landscape with location and doc. field</description>
 <pinref part="SV5" gate="G$1" pin="P$2"/>
 <pinref part="P+6" gate="1" pin="+5V"/>
 <wire x1="-61.722" y1="131.826" x2="-50.8" y2="131.826" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="R3" gate="G$1" pin="2"/>
+<pinref part="P+4" gate="1" pin="+5V"/>
+</segment>
+<segment>
+<pinref part="JP1" gate="G$1" pin="2"/>
+<wire x1="-58.42" y1="190.5" x2="-58.42" y2="198.12" width="0.1524" layer="91"/>
+<wire x1="-58.42" y1="198.12" x2="-60.96" y2="198.12" width="0.1524" layer="91"/>
+<pinref part="P+15" gate="1" pin="+5V"/>
 </segment>
 </net>
 <net name="N$9" class="0">
@@ -10522,16 +10609,6 @@ DIN A3, landscape with location and doc. field</description>
 <junction x="-94.96" y="146.84"/>
 </segment>
 <segment>
-<pinref part="U$4" gate="G$1" pin="P$4"/>
-<pinref part="SUPPLY23" gate="GND" pin="GND"/>
-<wire x1="-51.78" y1="195.1" x2="-51.78" y2="200.18" width="0.1524" layer="91"/>
-<wire x1="-51.78" y1="200.18" x2="-49.24" y2="200.18" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="LED4" gate="G$1" pin="C"/>
-<pinref part="SUPPLY42" gate="GND" pin="GND"/>
-</segment>
-<segment>
 <pinref part="LED5" gate="G$1" pin="C"/>
 <pinref part="SUPPLY43" gate="GND" pin="GND"/>
 </segment>
@@ -10566,6 +10643,16 @@ DIN A3, landscape with location and doc. field</description>
 <pinref part="SV8" gate="G$1" pin="P$1"/>
 <pinref part="SUPPLY5" gate="GND" pin="GND"/>
 <wire x1="-370.078" y1="105.41" x2="-362.458" y2="105.41" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="LED4" gate="G$1" pin="C"/>
+<pinref part="SUPPLY27" gate="GND" pin="GND"/>
+</segment>
+<segment>
+<pinref part="JP1" gate="G$1" pin="6"/>
+<wire x1="-53.34" y1="190.5" x2="-53.34" y2="198.12" width="0.1524" layer="91"/>
+<wire x1="-53.34" y1="198.12" x2="-50.8" y2="198.12" width="0.1524" layer="91"/>
+<pinref part="SUPPLY23" gate="GND" pin="GND"/>
 </segment>
 </net>
 <net name="TX2" class="0">
@@ -10854,25 +10941,29 @@ DIN A3, landscape with location and doc. field</description>
 <net name="MOSI" class="0">
 <segment>
 <pinref part="U$3" gate="G$1" pin="(AREF)PB0"/>
-<wire x1="-79.72" y1="240.82" x2="-67.02" y2="240.82" width="0.1524" layer="91"/>
-<label x="-67.02" y="240.82" size="1.778" layer="95" xref="yes"/>
+<wire x1="-79.72" y1="240.82" x2="-77.18" y2="240.82" width="0.1524" layer="91"/>
+<label x="-77.18" y="240.82" size="1.778" layer="95" xref="yes"/>
 </segment>
 <segment>
-<label x="-56.86" y="200.18" size="1.778" layer="95" rot="R90" xref="yes"/>
-<wire x1="-56.86" y1="195.1" x2="-56.86" y2="200.18" width="0.1524" layer="91"/>
-<pinref part="U$4" gate="G$1" pin="P$5"/>
+<pinref part="JP1" gate="G$1" pin="4"/>
+<wire x1="-55.88" y1="190.5" x2="-55.88" y2="198.12" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="MISO" class="0">
+<net name="MISO/SEL" class="0">
 <segment>
 <pinref part="U$3" gate="G$1" pin="(OCP)PB1"/>
-<wire x1="-79.72" y1="243.36" x2="-77.18" y2="243.36" width="0.1524" layer="91"/>
-<label x="-77.18" y="243.36" size="1.778" layer="95" xref="yes"/>
+<wire x1="-79.72" y1="243.36" x2="-64.48" y2="243.36" width="0.1524" layer="91"/>
+<label x="-64.48" y="243.36" size="1.778" layer="95" xref="yes"/>
+<pinref part="R2" gate="G$1" pin="2"/>
 </segment>
 <segment>
-<wire x1="-61.94" y1="172.24" x2="-61.94" y2="174.78" width="0.1524" layer="91"/>
-<label x="-61.94" y="172.24" size="1.778" layer="95" rot="R270" xref="yes"/>
-<pinref part="U$4" gate="G$1" pin="P$1"/>
+<pinref part="IC4" gate="A" pin="!A!/B"/>
+<wire x1="-107.66" y1="154.46" x2="-107.66" y2="144.3" width="0.1524" layer="91"/>
+<label x="-107.66" y="154.46" size="1.778" layer="95" rot="R90" xref="yes"/>
+</segment>
+<segment>
+<pinref part="JP1" gate="G$1" pin="1"/>
+<wire x1="-58.42" y1="180.34" x2="-58.42" y2="175.26" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="SCK" class="0">
@@ -10883,33 +10974,8 @@ DIN A3, landscape with location and doc. field</description>
 <wire x1="-51.78" y1="245.9" x2="-79.72" y2="245.9" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<label x="-56.86" y="172.24" size="1.778" layer="95" rot="R270" xref="yes"/>
-<pinref part="U$4" gate="G$1" pin="P$2"/>
-<wire x1="-56.86" y1="172.24" x2="-56.86" y2="174.78" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="SEL/RST" class="0">
-<segment>
-<pinref part="U$3" gate="G$1" pin="(ADC0)PB5"/>
-<label x="-51.78" y="253.52" size="1.778" layer="95" xref="yes"/>
-<pinref part="R12" gate="G$1" pin="2"/>
-<wire x1="-79.72" y1="253.52" x2="-51.78" y2="253.52" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<label x="-51.78" y="172.24" size="1.778" layer="95" rot="R270" xref="yes"/>
-<pinref part="U$4" gate="G$1" pin="P$3"/>
-<wire x1="-51.78" y1="172.24" x2="-51.78" y2="174.78" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="IC4" gate="A" pin="!A!/B"/>
-<wire x1="-107.66" y1="154.46" x2="-107.66" y2="144.3" width="0.1524" layer="91"/>
-<label x="-107.66" y="154.46" size="1.778" layer="95" rot="R90" xref="yes"/>
-</segment>
-</net>
-<net name="N$33" class="0">
-<segment>
-<pinref part="LED4" gate="G$1" pin="A"/>
-<pinref part="R12" gate="G$1" pin="1"/>
+<pinref part="JP1" gate="G$1" pin="3"/>
+<wire x1="-55.88" y1="180.34" x2="-55.88" y2="175.26" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$34" class="0">
@@ -10930,6 +10996,33 @@ DIN A3, landscape with location and doc. field</description>
 <pinref part="IC4" gate="A" pin="3Y"/>
 <pinref part="R23" gate="G$1" pin="2"/>
 <wire x1="-94.96" y1="116.36" x2="-94.96" y2="118.9" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$2" class="0">
+<segment>
+<pinref part="R2" gate="G$1" pin="1"/>
+<pinref part="LED4" gate="G$1" pin="A"/>
+</segment>
+</net>
+<net name="RST" class="0">
+<segment>
+<pinref part="U$3" gate="G$1" pin="(ADC0)PB5"/>
+<label x="-51.78" y="253.52" size="1.778" layer="95" xref="yes"/>
+<wire x1="-79.72" y1="253.52" x2="-56.86" y2="253.52" width="0.1524" layer="91"/>
+<pinref part="R3" gate="G$1" pin="1"/>
+<wire x1="-56.86" y1="253.52" x2="-51.78" y2="253.52" width="0.1524" layer="91"/>
+<junction x="-56.86" y="253.52"/>
+</segment>
+<segment>
+<pinref part="JP1" gate="G$1" pin="5"/>
+<wire x1="-53.34" y1="180.34" x2="-53.34" y2="175.26" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="MEH" class="0">
+<segment>
+<pinref part="PCB2" gate="G$1" pin="2"/>
+<pinref part="SV6" gate="1" pin="6"/>
+<wire x1="-163.54" y1="146.84" x2="-163.54" y2="141.76" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
